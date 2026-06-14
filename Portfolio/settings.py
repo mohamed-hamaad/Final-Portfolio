@@ -29,7 +29,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '.render.com',  
+    '.vercel.app',            # ده عشان يقبل اللينك الحالي وأي لينك يجيلك من فيرسيل
+    'hammad-portfolio-mu.vercel.app'  # اللينك بتاعك بالظبط لزيادة الأمان
 ]
 
 
