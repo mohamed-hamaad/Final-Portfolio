@@ -1,0 +1,16 @@
+
+{
+    "version": 2,
+    "builds": [
+    {
+        "src": "Portfolio/wsgi.py",
+        "use": "@vercel/python"
+    }
+    ],
+    "routes": [
+    {
+        "src": "/(.*)",
+        "dest": "Portfolio/wsgi.py"
+    }
+    ]
+}

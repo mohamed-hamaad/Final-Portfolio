@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Mohamed | Full-Stack Developer Portfolio">
+    <meta property="og:description" content="Explore my latest Django and Web development projects.">
+    <meta property="og:image" content="{% static 'images/og-preview.png' %}">
+        
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mohamed Hamaad | Full-Stack Developer">
+    <meta property="og:description" content="Check out my portfolio for production-ready web solutions and bespoke software architectures.">
+    <meta property="og:image" content="{% static 'images/meta-share-image.png' %}">
+    <meta property="og:url" content="https://your-domain.com">
+    <title>Mohamed Hammad | Full-Stack Developer</title>
+    <link rel="stylesheet" href="{% static 'css/output.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-grid-pattern {
+            background-size: 80px 80px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 2px, transparent 2px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+            mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 160%);
+        }
+
+        /* كلاسات الـ Reveal Animation عشان تشتغل مع الـ Observer */
+        .reveal-element.revealed {
+            opacity: 1 !important;
+            transform: translateY(0) scale(1) !important;
+        }
+        /* أنيميشن ظهور العناصر أول ما الصفحة تفتح */
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-hero-fade {
+            opacity: 0; /* بتبدأ مخفية */
+            animation: heroFadeIn 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* تأخير زمني لكل عنصر عشان يظهروا ورا بعض بالترتيب (Stagger effect) */
+        .delay-1 { animation-delay: 250ms; }
+        .delay-2 { animation-delay: 400ms; }
+        .delay-3 { animation-delay: 550ms; }
+    </style>
+</head>
+<body class="bg-[#0b0f19] text-slate-200 antialiased selection:bg-teal-500 selection:text-slate-900 overflow-x-hidden relative min-h-screen">
+
+    <div id="glow-cursor" class="pointer-events-none fixed inset-0 z-10 transition-opacity duration-300 opacity-0 bg-[radial-gradient(250px_circle_at_var(--x)_var(--y),rgba(20,184,166,0.09),transparent_50%)]"></div>
+
+    <div class="absolute top-0 left-0 w-full h-screen bg-grid-pattern pointer-events-none z-0"></div>
+
+    <nav class="sticky top-0 z-50 backdrop-blur-md bg-[#0b0f19]/70 border-b border-slate-800/50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="{% url 'home' %}" class="text-xl font-bold tracking-tight bg-linear-to-r from-teal-400 to-cyan-400 bg-clip-text text-transparent hover:opacity-80 transition-opacity">
+                &lt;Dev.Mohamed/&gt;
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600 dark:text-slate-400">
+                <a href="#about" data-section="about" class="nav-link relative py-2 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-teal-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100">About</a>
+                <a href="#skills" data-section="skills" class="nav-link relative py-2 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-teal-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100">Skills</a>
+                <a href="#projects" data-section="projects" class="nav-link relative py-2 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-teal-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100">Projects</a>
+                <a href="#contact" data-section="contact" class="nav-link relative py-2 hover:text-teal-500 dark:hover:text-teal-400 transition-colors duration-300 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-teal-500 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100">Contact</a>
+                <a href="#contact" class="px-4 py-2 rounded-full border border-teal-500/30 text-teal-400 hover:bg-teal-500/10 transition-all duration-300">Hire Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-20">
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer class="relative z-20 border-t border-slate-900 bg-[#070a12] py-8 text-center text-sm text-slate-500">
+        <p>&copy; 2026 Mohamed Hammad. Built with Django & Tailwind CSS.</p>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

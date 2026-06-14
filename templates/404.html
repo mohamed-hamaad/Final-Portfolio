@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Source Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+</head>
+<body class="bg-slate-950 text-slate-400 font-sans min-h-screen flex items-center justify-center overflow-hidden relative">
+
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]"></div>
+
+    <div class="max-w-md w-full mx-4 p-1 rounded-2xl bg-slate-950 border border-slate-900 shadow-2xl relative z-10 group">
+        
+        <div class="absolute -inset-0.5 bg-linear-to-r filter blur opacity-30 group-hover:opacity-50 transition duration-1000 group-hover:duration-200 rounded-2xl from-rose-500 to-amber-500"></div>
+        
+        <div class="relative bg-slate-950 rounded-2xl p-6 md:p-8 text-center">
+            <div class="w-16 h-16 bg-rose-500/10 border border-rose-500/30 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                <svg class="w-8 h-8 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                </svg>
+            </div>
+
+            <h1 class="text-7xl font-extrabold font-mono text-transparent bg-clip-text bg-linear-to-r from-rose-500 to-amber-400 tracking-tighter mb-2">
+                404
+            </h1>
+            
+            <p class="text-xs font-mono text-rose-400 mb-6">[ ERROR: REQUESTED_NODE_NOT_FOUND ]</p>
+
+            <p class="text-sm text-slate-500 mb-8 leading-relaxed">
+                The requested node could not be found.
+            </p>
+
+            <a href="/" class="w-full py-3 px-5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 font-medium text-sm hover:bg-slate-800 hover:text-teal-400 hover:border-teal-500/30 transition-all duration-300 flex items-center justify-center space-x-2 shadow-xl group/btn cursor-pointer">
+                <svg class="w-4 h-4 transform group-hover/btn:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                </svg>
+                <span>Return to Safe Node (Home)</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
