@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 
 DATABASES = {
-    'default': dj_database_url.parse('postgresql://neondb_owner:npg_GCS1lTyvx8kM@ep-polished-fog-at3zarnk.c-9.us-east-1.aws.neon.tech/neondb?sslmode=require')
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
 
