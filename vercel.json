@@ -13,5 +13,7 @@
       "dest": "Portfolio/wsgi.py"
     }
   ],
-
+  "commands": [
+    "python manage.py migrate"
+  ]
 }
