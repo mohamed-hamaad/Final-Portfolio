@@ -130,11 +130,23 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'mohamednaderhamaad@gmail.com' # إيميلك هنا
 EMAIL_HOST_PASSWORD = 'uzhkgvmdqohdsgng'
 
-STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_URL = '/static/'
+
+# تأكد أن المسار يشير إلى فولدر static الرئيسي في مشروعك
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    os.path.join(BASE_DIR, 'static'), 
 ]
+
+# الفولدر النهائي الذي سيتجمع فيه الملفات على Vercel
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# إعداد الكاش والضغط الخاص بـ WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
